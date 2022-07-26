@@ -53,7 +53,7 @@ router.get("/getAllUsers", auth, async (req, res) => {
 /**
  * GET method: retorna un solo usuario por el ID enviado como parametro.
  */
-router.get("/getOneUserById/:id", async (req, res) => {
+router.get("/getOneUserById/:id", auth, async (req, res) => {
   try {
     const data = await Model.findById(req.params.id);
     transaction.log(req.method, "200", "", "/getOneUserById");
