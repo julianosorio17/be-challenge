@@ -1,9 +1,6 @@
 # Node API
 ## Repo con la solucion del BE chalenge
 
-Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,
-AngularJS-powered HTML5 Markdown editor.
-
 ## Features
 
 - API usando NodeJS y Express
