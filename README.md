@@ -1,6 +1,9 @@
 # Node API
 ## Repo con la solucion del BE chalenge
 
+Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,
+AngularJS-powered HTML5 Markdown editor.
+
 ## Features
 
 - API usando NodeJS y Express
@@ -36,6 +39,12 @@ Los siguientes son los endpoints disponibles dentro de la API, todas bajo el dom
 | /logout | GET | Cerrar sesion y destruir el token. | Si |
 | /getPlaces | GET | Dadas las coordenadas y una ubicacion, retorna los lugares asociados. (Powered by [HereAPI](https://developer.here.com/)) | Si |
 | /getAllTransactions | GET | Obtener la lista de todas las transacciones realizadas en la API | Si |
+
+# Conclusiones
+- Fue una excelente prueba, me arriesgue a realizarla en Node, llevaba tiempo sin trabajar con el pero fue divertido. 🧑🏻‍💻
+- Hay algunas cosas que podria mejorar, pero dado el tiempo no alcance a hacerlas, asi como las pruebas😭. 
+- Las pruebas las iba a realizar utilizando Mocha y Chai
+- Se podria realizar un refactor genereal a la aplicacion para organizarlo mejor. No lo hice por el tiempo que restaba y no queria afectar lo que ya estaba funcionando. 🤔
 
 
 
