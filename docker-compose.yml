@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nodejs
+    container_name: nodejs
+    restart: unless-stopped
+    env_file: config/config.js
+    environment:
+      - MONGO_HOSTNAME=bk-api
+      - MONGO_PORT=$MONGO_PORT
+      - MONGO_DB=$MONGO_DB
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/home/node/app
+      - node_modules:/home/node/app/node_modules
+    networks:
+      - app-network
+    command: ./wait-for.sh db:27017 -- npm start
+
+  bk-api:
+    image: mongo:4.0.16-xenial
+    container_name: bk-api
+    restart: unless-stopped
+    env_file: config/config.js
+    volumes:     
+      - dbdata:/data/bk-api
+    networks:
+      - app-network  
+    ports:
+      - "27017:27017"
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+  node_modules:
